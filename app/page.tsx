@@ -1,9 +1,15 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import {
   Users,
   School,
@@ -17,9 +23,9 @@ import {
   Lightbulb,
   Play,
   MousePointer,
-} from "lucide-react"
-import Link from "next/link"
-import { VideoModal } from "@/components/video-modal"
+} from "lucide-react";
+import Link from "next/link";
+import { VideoModal } from "@/components/video-modal";
 
 const scrollingStyle = `
   @keyframes scroll {
@@ -30,38 +36,38 @@ const scrollingStyle = `
       transform: translateX(-50%);
     }
   }
-  
+
   .animate-scroll {
     animation: scroll 30s linear infinite;
   }
-  
+
   .scrollable-container {
     overflow-x: auto;
     scrollbar-width: thin;
     scrollbar-color: #cbd5e1 #f1f5f9;
   }
-  
+
   .scrollable-container::-webkit-scrollbar {
     height: 6px;
   }
-  
+
   .scrollable-container::-webkit-scrollbar-track {
     background: #f1f5f9;
     border-radius: 3px;
   }
-  
+
   .scrollable-container::-webkit-scrollbar-thumb {
     background: #cbd5e1;
     border-radius: 3px;
   }
-  
+
   .scrollable-container::-webkit-scrollbar-thumb:hover {
     background: #94a3b8;
   }
-`
+`;
 
 export default function IBSRAPortfolio() {
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false)
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-white">
@@ -69,11 +75,14 @@ export default function IBSRAPortfolio() {
       {/* Hero Section with Clickable Video */}
       <section className="relative h-screen w-full overflow-hidden">
         {/* Background Video */}
-        <div className="absolute inset-0 w-full h-full cursor-pointer group" onClick={() => setIsVideoModalOpen(true)}>
+        <div
+          className="absolute inset-0 w-full h-full cursor-pointer group"
+          onClick={() => setIsVideoModalOpen(true)}
+        >
           <iframe
-            src="https://www.youtube.com/embed/1_2yEb1F9G8?autoplay=1&mute=1&loop=1&playlist=1_2yEb1F9G8&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+            src="https://www.youtube.com/embed/1_2yEb1F9G8?autoplay=0&mute=1&loop=1&playlist=1_2yEb1F9G8&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
             className="w-full h-full object-cover pointer-events-none"
-            allow="autoplay; encrypted-media"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             title="IBSRA Hero Video"
           />
@@ -90,13 +99,16 @@ export default function IBSRAPortfolio() {
         <div className="relative z-10 flex items-center justify-center h-full text-center text-white px-4 pointer-events-none">
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="space-y-4">
-              <Badge className="bg-blue-600/80 text-white border-blue-400">Certified by Google & Microsoft</Badge>
+              <Badge className="bg-blue-600/80 text-white border-blue-400">
+                Certified by Google & Microsoft
+              </Badge>
               <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white drop-shadow-2xl">
                 Learn. Earn. With IBSRA.
               </h1>
               <p className="text-xl md:text-2xl text-gray-100 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
-                IBSRA is the first EdTech company that helps students build their first income source by combining
-                technical skills, business knowledge, and personal branding.
+                IBSRA is the first EdTech company that helps students build
+                their first income source by combining technical skills,
+                business knowledge, and personal branding.
               </p>
             </div>
 
@@ -132,13 +144,18 @@ export default function IBSRAPortfolio() {
       </section>
 
       {/* Video Modal */}
-      <VideoModal isOpen={isVideoModalOpen} onClose={() => setIsVideoModalOpen(false)} />
+      <VideoModal
+        isOpen={isVideoModalOpen}
+        onClose={() => setIsVideoModalOpen(false)}
+      />
 
       {/* Educational Programs Section */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Educational Programs</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Our Educational Programs
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive programs designed to build careers, not just skills
             </p>
@@ -158,15 +175,20 @@ export default function IBSRAPortfolio() {
                     <CardHeader className="p-0">
                       <div className="flex items-center gap-3 mb-4">
                         <Code className="w-8 h-8 text-blue-600" />
-                        <CardTitle className="text-3xl font-bold">Discovery Program</CardTitle>
+                        <CardTitle className="text-3xl font-bold">
+                          Discovery Program
+                        </CardTitle>
                       </div>
                       <CardDescription className="text-lg text-gray-600">
-                        Master programming basics while exploring various fields, helping you choose the right
-                        specialization for your future.
+                        Master programming basics while exploring various
+                        fields, helping you choose the right specialization for
+                        your future.
                       </CardDescription>
                     </CardHeader>
                     <Link href="/program/discovery">
-                      <Button className="bg-green-600 hover:bg-green-700 w-fit">Invest in Yourself Now</Button>
+                      <Button className="bg-green-600 hover:bg-green-700 w-fit">
+                        Invest in Yourself Now
+                      </Button>
                     </Link>
                   </div>
                 </CardContent>
@@ -185,7 +207,9 @@ export default function IBSRAPortfolio() {
                 <div className="bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center p-12 md:order-1">
                   <div className="text-white text-center">
                     <Lightbulb className="w-24 h-24 mx-auto mb-4" />
-                    <h3 className="text-2xl font-bold">Innovate & Specialize</h3>
+                    <h3 className="text-2xl font-bold">
+                      Innovate & Specialize
+                    </h3>
                   </div>
                 </div>
                 <CardContent className="p-12 flex flex-col justify-center md:order-2">
@@ -198,15 +222,20 @@ export default function IBSRAPortfolio() {
                     <CardHeader className="p-0">
                       <div className="flex items-center gap-3 mb-4">
                         <TrendingUp className="w-8 h-8 text-orange-600" />
-                        <CardTitle className="text-3xl font-bold">Specialization Program</CardTitle>
+                        <CardTitle className="text-3xl font-bold">
+                          Specialization Program
+                        </CardTitle>
                       </div>
                       <CardDescription className="text-lg text-gray-600">
-                        Specialize in a tech field, explore its real-world impact across industries, and build your
-                        personal brand and fanbase along the way.
+                        Specialize in a tech field, explore its real-world
+                        impact across industries, and build your personal brand
+                        and fanbase along the way.
                       </CardDescription>
                     </CardHeader>
                     <Link href="/program/specialization">
-                      <Button className="bg-orange-600 hover:bg-orange-700 w-fit">Admission Test Info</Button>
+                      <Button className="bg-orange-600 hover:bg-orange-700 w-fit">
+                        Admission Test Info
+                      </Button>
                     </Link>
                   </div>
                 </CardContent>
@@ -226,14 +255,19 @@ export default function IBSRAPortfolio() {
                     <CardHeader className="p-0">
                       <div className="flex items-center gap-3 mb-4">
                         <Briefcase className="w-8 h-8 text-blue-600" />
-                        <CardTitle className="text-3xl font-bold">IBS – Ibsra Business School</CardTitle>
+                        <CardTitle className="text-3xl font-bold">
+                          IBS – Ibsra Business School
+                        </CardTitle>
                       </div>
                       <CardDescription className="text-lg text-gray-600">
-                        Master business foundations and turn your skills into a real income source.
+                        Master business foundations and turn your skills into a
+                        real income source.
                       </CardDescription>
                     </CardHeader>
                     <Link href="/program/ibs">
-                      <Button className="bg-blue-600 hover:bg-blue-700 w-fit">Know More</Button>
+                      <Button className="bg-blue-600 hover:bg-blue-700 w-fit">
+                        Know More
+                      </Button>
                     </Link>
                   </div>
                 </CardContent>
@@ -253,8 +287,12 @@ export default function IBSRAPortfolio() {
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Why IBSRA?</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">What Makes IBSRA Different?</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Why IBSRA?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              What Makes IBSRA Different?
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -288,7 +326,9 @@ export default function IBSRAPortfolio() {
             <Card className="text-center p-8 shadow-md hover:shadow-lg transition-shadow">
               <CardContent className="space-y-4">
                 <Award className="w-16 h-16 text-purple-600 mx-auto" />
-                <h3 className="text-3xl font-bold text-purple-600">Certified</h3>
+                <h3 className="text-3xl font-bold text-purple-600">
+                  Certified
+                </h3>
                 <p className="text-lg font-semibold">Google & Microsoft</p>
                 <p className="text-gray-600">Official Partners</p>
               </CardContent>
@@ -319,8 +359,12 @@ export default function IBSRAPortfolio() {
       <section className="py-16 px-4 bg-gray-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Trusted Clients</h2>
-            <p className="text-lg text-gray-600">Partnering with leading organizations across Egypt</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Trusted Clients
+            </h2>
+            <p className="text-lg text-gray-600">
+              Partnering with leading organizations across Egypt
+            </p>
           </div>
 
           {/* Scrollable Logos Container */}
@@ -330,34 +374,52 @@ export default function IBSRAPortfolio() {
               <div className="flex items-center justify-center min-w-0 shrink-0">
                 <div className="flex items-center space-x-16 px-8">
                   <div className="w-32 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center">
-                    <span className="text-blue-600 font-bold text-lg">Microsoft</span>
+                    <span className="text-blue-600 font-bold text-lg">
+                      Microsoft
+                    </span>
                   </div>
                   <div className="w-32 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center">
-                    <span className="text-red-600 font-bold text-lg">Google</span>
+                    <span className="text-red-600 font-bold text-lg">
+                      Google
+                    </span>
                   </div>
                   <div className="w-32 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center">
                     <span className="text-blue-800 font-bold text-lg">IBM</span>
                   </div>
                   <div className="w-32 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center">
-                    <span className="text-orange-600 font-bold text-lg">Amazon</span>
+                    <span className="text-orange-600 font-bold text-lg">
+                      Amazon
+                    </span>
                   </div>
                   <div className="w-32 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center">
-                    <span className="text-blue-600 font-bold text-lg">Meta</span>
+                    <span className="text-blue-600 font-bold text-lg">
+                      Meta
+                    </span>
                   </div>
                   <div className="w-32 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center">
-                    <span className="text-green-600 font-bold text-lg">Spotify</span>
+                    <span className="text-green-600 font-bold text-lg">
+                      Spotify
+                    </span>
                   </div>
                   <div className="w-32 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center">
-                    <span className="text-purple-600 font-bold text-lg">Adobe</span>
+                    <span className="text-purple-600 font-bold text-lg">
+                      Adobe
+                    </span>
                   </div>
                   <div className="w-32 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center">
-                    <span className="text-blue-500 font-bold text-lg">Intel</span>
+                    <span className="text-blue-500 font-bold text-lg">
+                      Intel
+                    </span>
                   </div>
                   <div className="w-32 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center">
-                    <span className="text-red-500 font-bold text-lg">Oracle</span>
+                    <span className="text-red-500 font-bold text-lg">
+                      Oracle
+                    </span>
                   </div>
                   <div className="w-32 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center">
-                    <span className="text-green-700 font-bold text-lg">NVIDIA</span>
+                    <span className="text-green-700 font-bold text-lg">
+                      NVIDIA
+                    </span>
                   </div>
                 </div>
               </div>
@@ -366,34 +428,52 @@ export default function IBSRAPortfolio() {
               <div className="flex items-center justify-center min-w-0 shrink-0">
                 <div className="flex items-center space-x-16 px-8">
                   <div className="w-32 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center">
-                    <span className="text-blue-600 font-bold text-lg">Microsoft</span>
+                    <span className="text-blue-600 font-bold text-lg">
+                      Microsoft
+                    </span>
                   </div>
                   <div className="w-32 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center">
-                    <span className="text-red-600 font-bold text-lg">Google</span>
+                    <span className="text-red-600 font-bold text-lg">
+                      Google
+                    </span>
                   </div>
                   <div className="w-32 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center">
                     <span className="text-blue-800 font-bold text-lg">IBM</span>
                   </div>
                   <div className="w-32 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center">
-                    <span className="text-orange-600 font-bold text-lg">Amazon</span>
+                    <span className="text-orange-600 font-bold text-lg">
+                      Amazon
+                    </span>
                   </div>
                   <div className="w-32 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center">
-                    <span className="text-blue-600 font-bold text-lg">Meta</span>
+                    <span className="text-blue-600 font-bold text-lg">
+                      Meta
+                    </span>
                   </div>
                   <div className="w-32 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center">
-                    <span className="text-green-600 font-bold text-lg">Spotify</span>
+                    <span className="text-green-600 font-bold text-lg">
+                      Spotify
+                    </span>
                   </div>
                   <div className="w-32 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center">
-                    <span className="text-purple-600 font-bold text-lg">Adobe</span>
+                    <span className="text-purple-600 font-bold text-lg">
+                      Adobe
+                    </span>
                   </div>
                   <div className="w-32 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center">
-                    <span className="text-blue-500 font-bold text-lg">Intel</span>
+                    <span className="text-blue-500 font-bold text-lg">
+                      Intel
+                    </span>
                   </div>
                   <div className="w-32 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center">
-                    <span className="text-red-500 font-bold text-lg">Oracle</span>
+                    <span className="text-red-500 font-bold text-lg">
+                      Oracle
+                    </span>
                   </div>
                   <div className="w-32 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center">
-                    <span className="text-green-700 font-bold text-lg">NVIDIA</span>
+                    <span className="text-green-700 font-bold text-lg">
+                      NVIDIA
+                    </span>
                   </div>
                 </div>
               </div>
@@ -406,8 +486,12 @@ export default function IBSRAPortfolio() {
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Success Stories</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Real students, real results, real income</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Success Stories
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Real students, real results, real income
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -423,8 +507,8 @@ export default function IBSRAPortfolio() {
                   </div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  "Started earning $500/month from freelance app development after completing the Specialization
-                  Program."
+                  "Started earning $500/month from freelance app development
+                  after completing the Specialization Program."
                 </p>
                 <div className="flex text-yellow-500">
                   {[...Array(5)].map((_, i) => (
@@ -446,7 +530,8 @@ export default function IBSRAPortfolio() {
                   </div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  "Built my personal brand and now manage social media for 3 local businesses, earning $800/month."
+                  "Built my personal brand and now manage social media for 3
+                  local businesses, earning $800/month."
                 </p>
                 <div className="flex text-yellow-500">
                   {[...Array(5)].map((_, i) => (
@@ -468,7 +553,8 @@ export default function IBSRAPortfolio() {
                   </div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  "Launched my own tech startup after IBS program. Currently generating $2000/month in revenue."
+                  "Launched my own tech startup after IBS program. Currently
+                  generating $2000/month in revenue."
                 </p>
                 <div className="flex text-yellow-500">
                   {[...Array(5)].map((_, i) => (
@@ -484,12 +570,18 @@ export default function IBSRAPortfolio() {
       {/* Final CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-700 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Start Your Journey?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Ready to Start Your Journey?
+          </h2>
           <p className="text-xl mb-8 opacity-90">
-            Join thousands of students who are already building their future with IBSRA
+            Join thousands of students who are already building their future
+            with IBSRA
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg">
+            <Button
+              size="lg"
+              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg"
+            >
               Apply for Admission Test
             </Button>
             <Button
@@ -510,7 +602,8 @@ export default function IBSRAPortfolio() {
             <div>
               <h3 className="text-2xl font-bold mb-4">IBSRA</h3>
               <p className="text-gray-400">
-                The first EdTech company helping students build their first income source.
+                The first EdTech company helping students build their first
+                income source.
               </p>
             </div>
             <div>
@@ -522,7 +615,10 @@ export default function IBSRAPortfolio() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/program/specialization" className="hover:text-white">
+                  <Link
+                    href="/program/specialization"
+                    className="hover:text-white"
+                  >
                     Specialization Program
                   </Link>
                 </li>
@@ -568,5 +664,5 @@ export default function IBSRAPortfolio() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
