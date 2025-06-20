@@ -10,9 +10,19 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-    experimental: {
-    appDir: true,
-  }
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "Permissions-Policy",
+            value: "autoplay=(), encrypted-media=()",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
